@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+{%load bootstrap%}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css"
+        integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body class="container">
+
+    <div class="container row justify-content-md-center mt-5">
+
+        <form class="col-6 mb-5" method="POST" enctype="multipart/form-data">
+            {%csrf_token%}
+            <h2 class="text-center">Realizar Cadastro</h2>
+            {{form|bootstrap}}
+
+            <button class="btn btn-primary" type="submit">Cadastrar</button>
+        </form>
+    </div>
+
+</body>
+
+</html>

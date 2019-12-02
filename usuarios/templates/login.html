@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+{%load bootstrap%}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css"
+        integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body class="container">
+
+    <div class="container row justify-content-md-center mt-5">
+
+        <form action='submit' class="col-6 " method="POST">
+            {%csrf_token%}
+            <h2 class="text-center">Realizar Login</h2>
+            <div class="form-group">
+                <label for="username">Usuario</label>
+                <input type="text" class="form-control" id="username" name="username" aria-describedby="emailHelp">
+            </div>
+            <div class="form-group">
+                <label for="password">Senha</label>
+                <input type="password" class="form-control" id="password" name="password">
+
+            </div>
+            {%for message in messages%}
+            <div class="alert alert-danger" role="alert">
+                Erro! {{message}}
+            </div>
+            {%endfor%}
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary mt-3">Logar</button>
+            </div>
+            <div class="text-center mt-5">
+                <p>Não possui uma conta?</p>
+                <a href="/cadastro/" class="btn btn-primary">Crie Aqui</a>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>
